@@ -43,7 +43,7 @@ const Footer = () => {
               <li className="font-semibold">{section.title}</li>
               {section.footerList.map((footerListItem, i) => {
                 return (
-                  <li className="hover:underline" key={i}>
+                  <li className="hover:underline cursor-pointer " key={i}>
                     {footerListItem}
                   </li>
                 );
