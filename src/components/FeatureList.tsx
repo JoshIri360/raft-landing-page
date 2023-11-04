@@ -50,8 +50,8 @@ const FeatureList = () => {
           <motion.div
             initial={{ opacity: 0, x: x, z: 10 }}
             whileInView={{ opacity: 1, x: 0, z: 0 }}
-            transition={{ type: "spring", duration: i+1 }}
-            className={`col-span-2 md:col-span-${feature.space} child:md:h-full`}>
+            transition={{ type: "spring", duration: 1 }}
+            className={`lg:col-span-${feature.space} md:col-span-${feature.space} child:md:h-full`}>
             <Feature
               key={i}
               featureImg={feature.image}
