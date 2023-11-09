@@ -1,5 +1,3 @@
-import { ArrowLeftRight, Coins, CreditCard } from "lucide-react";
-import benefitMain from "../assets/benefits/BenefitMain1.png";
 import { ReactNode } from "react";
 
 interface BenefitProps {
@@ -22,7 +20,8 @@ const BenefitStatements = ({ benefitOrder, img, Benefits }: BenefitProps) => {
         </div>
       ) : (
         <div
-          className={`rounded-md w-full h-72 md:h-[30rem] lg:h-[40rem] mb-10 benefit-${benefitOrder}`}></div>
+          className={`rounded-md w-full h-72 md:h-[30rem] lg:h-[40rem] mb-10 benefit-${benefitOrder}`}
+        ></div>
       )}
       <div className="flex flex-col lg:flex-row gap-5">
         {Benefits.map((benefit, i) => {

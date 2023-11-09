@@ -6,6 +6,8 @@ import reviewer4 from "../assets/reviewers/reviewer4.jpg";
 import reviewer5 from "../assets/reviewers/reviewer5.jpg";
 import { Button } from "./ui/button";
 
+import Carousel from "@itseasy21/react-elastic-carousel";
+
 const Reviews = () => {
   const reviews = [
     {
@@ -39,21 +41,57 @@ const Reviews = () => {
         "I can't express how RAFT has transformed my financial outlook. Their wealth management services have been a true game-changer for my family's financial stability. The expert guidance and personalized strategies have given us the assurance we need, knowing that our financial future is in capable hands. RAFT has been a blessing.",
     },
   ];
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+  ];
+
   return (
     <div className="text-center bg-green-500 text-background">
-      <div className="green-margin py-8">
+      <div className="green-margin py-8 pb-16">
         <div>
           <h1 className="text-4xl py-6">Join over 3 million members</h1>
         </div>
-        <div className="carousel gap-7 w-full pt-6">
+        <Carousel
+          isRTL={false}
+          itemPadding={[10]}
+          breakPoints={breakPoints}
+          pagination={false}
+          renderArrow={({ type, onClick, isEdge }) => {
+            const pointer =
+              type === "PREV" ? (
+                <Button
+                  className="rounded-full h-10 w-10 border border-background p-1"
+                  disabled={isEdge}
+                >
+                  <ArrowLeft />
+                </Button>
+              ) : (
+                <Button
+                  className="rounded-full h-10 w-10 border border-background p-1"
+                  disabled={isEdge}
+                >
+                  <ArrowRight />
+                </Button>
+              );
+            return (
+              <button onClick={onClick} disabled={isEdge} className="rec-arrow">
+                {pointer}
+              </button>
+            );
+          }}
+        >
           {reviews.map((rev, i) => {
             return (
               <div
                 id={`slide${(i + 1) % 6}`}
-                className="carousel-item relative w-full md:w-1/3">
-                <div className="w-full text-left">
+                className="relative w-full h-full"
+              >
+                <div className="w-full text-left h-full flex flex-col content-between justify-between">
                   {rev.review}
-                  <div className="py-6 pb-24 flex justify-between items-center">
+                  <div className="flex justify-between items-center">
                     <div>
                       <h5 className="text-2xl font-semibold">{rev.name}</h5>
                       <p className="text-sm">Happy RAFT User</p>
@@ -65,22 +103,10 @@ const Reviews = () => {
                     />
                   </div>
                 </div>
-                <div className="absolute flex gap-5 transform right-0 bottom-3">
-                  <Button className="rounded-full h-10 w-10 border border-background p-1">
-                    <a href={`#slide${i % 6 == 0 ? 5 : i % 6}`}>
-                      <ArrowLeft />
-                    </a>
-                  </Button>
-                  <Button className="rounded-full h-10 w-10 border border-background p-1">
-                    <a href={`#slide${(i + 2) % 6 == 0 ? 1 : (i + 2) % 6}`}>
-                      <ArrowRight />
-                    </a>
-                  </Button>
-                </div>
               </div>
             );
           })}
-        </div>
+        </Carousel>
       </div>
     </div>
   );

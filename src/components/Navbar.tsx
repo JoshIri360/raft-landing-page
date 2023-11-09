@@ -1,17 +1,16 @@
 import React from "react";
 import { Menu } from "lucide-react";
 import Logo from "../assets/logo.png";
-import NavbarSide from "./NavbarSide";
 
 interface NavbarSideProps {
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar = ({ show, setShow }: NavbarSideProps) => {
+const Navbar = ({ setShow }: NavbarSideProps) => {
   return (
     <>
-      <div className="navbar md:text-lg flex justify-between universal-margin py-3 items-center border-b border-secondary relative">
+      <div className="navbar md:text-base flex justify-between universal-margin py-3 items-center border-b border-secondary relative">
         <div className="">
           <img src={Logo} alt="Logo" />
         </div>

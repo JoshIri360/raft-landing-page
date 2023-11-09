@@ -51,6 +51,9 @@ const FeatureList = () => {
             initial={{ opacity: 0, x: x, z: 10 }}
             whileInView={{ opacity: 1, x: 0, z: 0 }}
             transition={{ type: "spring", duration: 1 }}
+            viewport={{
+              once: true,
+            }}
             className={`lg:col-span-${feature.space} md:col-span-${feature.space} child:md:h-full`}>
             <Feature
               key={i}

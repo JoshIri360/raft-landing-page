@@ -84,7 +84,7 @@ function App() {
 
   return (
     <>
-      {show && <NavbarSide show={show} setShow={setShow} />}
+      <NavbarSide show={show} setShow={setShow} />
       <Navbar show={show} setShow={setShow} />
       <Intro />
       <FeaturedIn />
