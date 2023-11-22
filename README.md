@@ -6,6 +6,11 @@ This project is a responsive landing page developed using Vite, TypeScript, Tail
 
 Explore the live demo: [Raft Landing Page Demo](https://raft-landing-page-hvmh.vercel.app/)
 
+
+https://github.com/JoshIri360/raft-landing-page/assets/91752742/f0c6d06d-f5ba-4a97-8ecc-9b6118a9b64b
+
+
+
 ## Features
 
 - **Modern Development Stack:** Built with Vite and TypeScript for efficient and fast development.
